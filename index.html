@@ -1,0 +1,1610 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Personal portfolio of Pravin Kumar Sharma: Assistant Professor (ECE), Power Electronics, Renewable Energy research, and guided student projects." />
+    <title>Pravin Kumar Sharma | Portfolio</title>
+
+    <!-- Icons (optional enhancement) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+      :root{
+        --bg0:#070b14;
+        --bg1:#0b1220;
+        --surface:rgba(17, 28, 51, .72);
+        --surface2:rgba(17, 28, 51, .45);
+        --card:rgba(255,255,255,.04);
+        --card2:rgba(255,255,255,.06);
+        --border:rgba(255,255,255,.10);
+        --text:#eaf0ff;
+        --muted:rgba(234,240,255,.72);
+        --muted2:rgba(234,240,255,.56);
+        --accent:#2dd4bf;
+        --accent2:#60a5fa;
+        --danger:#fb7185;
+        --shadow:0 18px 60px rgba(0,0,0,.35);
+        --radius:18px;
+        --radius2:14px;
+        --container:1120px;
+        --headerH:74px;
+      }
+
+      *{ box-sizing:border-box; }
+      html{ scroll-behavior:smooth; }
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        color:var(--text);
+        background:
+          radial-gradient(900px circle at 10% -10%, rgba(45, 212, 191, .26), transparent 55%),
+          radial-gradient(800px circle at 90% 10%, rgba(96, 165, 250, .22), transparent 50%),
+          linear-gradient(180deg, var(--bg0), var(--bg1) 60%, #060911 100%);
+        line-height:1.6;
+      }
+
+      a{ color:inherit; text-decoration:none; }
+      img{ max-width:100%; display:block; }
+
+      /* Accessibility: keyboard focus */
+      :focus-visible{
+        outline:3px solid rgba(45,212,191,.75);
+        outline-offset:3px;
+        border-radius:10px;
+      }
+
+      .skip-link{
+        position:absolute;
+        left:-999px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+      }
+      .skip-link:focus{
+        left:16px;
+        top:16px;
+        width:auto;
+        height:auto;
+        padding:10px 12px;
+        background:rgba(17,28,51,.95);
+        border:1px solid var(--border);
+        border-radius:12px;
+        z-index:9999;
+      }
+
+      .container{
+        width:min(var(--container), calc(100% - 40px));
+        margin-inline:auto;
+      }
+
+      /* Header / Navbar */
+      .site-header{
+        position:sticky;
+        top:0;
+        z-index:50;
+        height:var(--headerH);
+        display:flex;
+        align-items:center;
+        backdrop-filter:saturate(140%) blur(12px);
+        background:rgba(7,11,20,.55);
+        border-bottom:1px solid rgba(255,255,255,.08);
+      }
+
+      .header-inner{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:16px;
+      }
+
+      .brand{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        min-width:220px;
+      }
+      .brand-mark{
+        width:40px;
+        height:40px;
+        border-radius:14px;
+        background:
+          radial-gradient(circle at 30% 30%, rgba(45,212,191,.9), transparent 45%),
+          radial-gradient(circle at 80% 20%, rgba(96,165,250,.75), transparent 40%),
+          linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+        border:1px solid rgba(255,255,255,.14);
+        box-shadow:0 10px 40px rgba(0,0,0,.25);
+      }
+      .brand-title{
+        display:flex;
+        flex-direction:column;
+        line-height:1.2;
+      }
+      .brand-title strong{
+        font-size:14px;
+        letter-spacing:.2px;
+      }
+      .brand-title span{
+        font-size:12px;
+        color:var(--muted);
+      }
+
+      .nav{
+        display:flex;
+        align-items:center;
+        gap:20px;
+      }
+      .nav a{
+        font-size:14px;
+        color:var(--muted);
+        padding:10px 10px;
+        border-radius:12px;
+        transition:background .2s ease, color .2s ease, transform .2s ease;
+      }
+      .nav a:hover{
+        background:rgba(255,255,255,.06);
+        color:var(--text);
+        transform:translateY(-1px);
+      }
+      .nav a[aria-current="page"]{
+        color:var(--text);
+        background:rgba(45,212,191,.12);
+        border:1px solid rgba(45,212,191,.22);
+      }
+
+      .nav-toggle{
+        display:none;
+      }
+
+      .header-cta{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        min-width:220px;
+        justify-content:flex-end;
+      }
+
+      /* Buttons */
+      .btn{
+        appearance:none;
+        border:1px solid rgba(255,255,255,.14);
+        background:rgba(255,255,255,.04);
+        color:var(--text);
+        padding:10px 14px;
+        border-radius:14px;
+        font-weight:650;
+        font-size:14px;
+        cursor:pointer;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        gap:10px;
+        transition:transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+        box-shadow:0 10px 30px rgba(0,0,0,.18);
+        user-select:none;
+      }
+      .btn:hover{
+        transform:translateY(-2px);
+        border-color:rgba(45,212,191,.35);
+        background:rgba(45,212,191,.14);
+        box-shadow:0 16px 45px rgba(0,0,0,.25);
+      }
+      .btn:active{ transform:translateY(-1px); }
+
+      .btn-primary{
+        border-color:rgba(45,212,191,.38);
+        background:linear-gradient(180deg, rgba(45,212,191,.24), rgba(45,212,191,.10));
+      }
+      .btn-secondary{
+        border-color:rgba(96,165,250,.35);
+        background:linear-gradient(180deg, rgba(96,165,250,.20), rgba(96,165,250,.08));
+      }
+
+      /* Mobile menu */
+      @media (max-width: 900px){
+        .nav{ display:none; }
+        .header-cta{ min-width:auto; }
+        .nav-toggle{
+          display:inline-flex;
+          width:44px;
+          height:44px;
+          align-items:center;
+          justify-content:center;
+          border-radius:14px;
+          border:1px solid rgba(255,255,255,.14);
+          background:rgba(255,255,255,.04);
+          color:var(--text);
+          cursor:pointer;
+          transition:transform .2s ease, background .2s ease;
+        }
+        .nav-toggle:hover{
+          transform:translateY(-2px);
+          background:rgba(255,255,255,.06);
+        }
+        .header-inner{ gap:12px; }
+      }
+
+      .mobile-panel{
+        display:none;
+      }
+      @media (max-width: 900px){
+        .mobile-panel{
+          display:block;
+          position:fixed;
+          inset:calc(var(--headerH) - 1px) 0 auto 0;
+          background:rgba(7,11,20,.92);
+          backdrop-filter:saturate(140%) blur(12px);
+          border-bottom:1px solid rgba(255,255,255,.10);
+          transform:translateY(-10px);
+          opacity:0;
+          pointer-events:none;
+          transition:opacity .2s ease, transform .2s ease;
+          z-index:49;
+        }
+        .mobile-panel.open{
+          opacity:1;
+          transform:translateY(0);
+          pointer-events:auto;
+        }
+        .mobile-panel .container{
+          padding:18px 0;
+        }
+        .mobile-links{
+          display:flex;
+          flex-direction:column;
+          gap:6px;
+          margin:0;
+          padding:0;
+          list-style:none;
+        }
+        .mobile-links a{
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          padding:14px 14px;
+          border-radius:14px;
+          border:1px solid rgba(255,255,255,.08);
+          background:rgba(255,255,255,.03);
+          color:var(--text);
+        }
+        .mobile-links a span{
+          color:var(--muted);
+          font-size:13px;
+        }
+      }
+
+      /* Sections */
+      main{ overflow:hidden; }
+
+      section{
+        padding:clamp(56px, 6vw, 86px) 0;
+        position:relative;
+      }
+      section .section-head{
+        margin-bottom:26px;
+        display:flex;
+        gap:16px;
+        align-items:flex-end;
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .eyebrow{
+        color:var(--accent);
+        text-transform:uppercase;
+        letter-spacing:.16em;
+        font-size:12px;
+        font-weight:800;
+      }
+      h1,h2,h3{ margin:0; }
+      h2{
+        font-size:clamp(22px, 2.2vw, 30px);
+        letter-spacing:-.02em;
+      }
+      .subhead{
+        color:var(--muted);
+        max-width:720px;
+      }
+
+      .reveal{
+        opacity:0;
+        transform:translateY(12px);
+        transition:opacity .7s ease, transform .7s ease;
+      }
+      .reveal.is-visible{
+        opacity:1;
+        transform:none;
+      }
+
+      .section-anchor{
+        scroll-margin-top: calc(var(--headerH) + 18px);
+      }
+
+      /* Hero */
+      .hero{
+        padding-top:42px;
+      }
+      .hero-grid{
+        display:grid;
+        grid-template-columns: 1.2fr .8fr;
+        gap:24px;
+        align-items:stretch;
+      }
+      @media (max-width: 900px){
+        .hero-grid{ grid-template-columns: 1fr; }
+      }
+
+      .hero-card{
+        background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+        border:1px solid rgba(255,255,255,.10);
+        border-radius:var(--radius);
+        padding:26px;
+        box-shadow:var(--shadow);
+        overflow:hidden;
+        position:relative;
+      }
+
+      .hero-card:before{
+        content:"";
+        position:absolute;
+        inset:-120px -120px auto auto;
+        width:340px;
+        height:340px;
+        background:
+          radial-gradient(circle at 30% 30%, rgba(45,212,191,.35), transparent 60%),
+          radial-gradient(circle at 60% 60%, rgba(96,165,250,.26), transparent 55%);
+        filter:blur(2px);
+        pointer-events:none;
+      }
+
+      .hero-title{
+        font-size:clamp(32px, 3.4vw, 44px);
+        letter-spacing:-.03em;
+        line-height:1.05;
+        margin-bottom:12px;
+        position:relative;
+      }
+      .hero-title span{
+        color:var(--accent);
+      }
+      .hero-meta{
+        color:var(--muted);
+        font-weight:600;
+        margin-bottom:18px;
+      }
+
+      .hero-summary{
+        color:var(--muted);
+        margin:0 0 20px 0;
+        max-width:62ch;
+      }
+
+      .hero-actions{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+        align-items:center;
+      }
+
+      .hero-side{
+        display:flex;
+        flex-direction:column;
+        gap:14px;
+      }
+      .info-card{
+        background:rgba(255,255,255,.03);
+        border:1px solid rgba(255,255,255,.10);
+        border-radius:var(--radius2);
+        padding:18px;
+      }
+      .info-card strong{
+        display:block;
+        margin-bottom:8px;
+        letter-spacing:-.01em;
+      }
+      .info-list{
+        list-style:none;
+        padding:0;
+        margin:0;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        color:var(--muted);
+        font-size:14px;
+      }
+      .info-list a{
+        color:var(--muted);
+        border-bottom:1px dashed rgba(255,255,255,.18);
+        padding-bottom:2px;
+      }
+      .info-list a:hover{
+        color:var(--text);
+        border-bottom-color:rgba(45,212,191,.55);
+      }
+      .info-row{
+        display:flex;
+        gap:10px;
+        align-items:flex-start;
+      }
+      .info-row i{
+        margin-top:2px;
+        color:rgba(45,212,191,.95);
+      }
+
+      /* Cards / Grids */
+      .grid{
+        display:grid;
+        gap:16px;
+      }
+      .grid-2{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+      .grid-3{ grid-template-columns:repeat(3, minmax(0,1fr)); }
+      .grid-4{ grid-template-columns:repeat(4, minmax(0,1fr)); }
+      @media (max-width: 900px){
+        .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; }
+      }
+
+      .card{
+        background:rgba(255,255,255,.03);
+        border:1px solid rgba(255,255,255,.10);
+        border-radius:var(--radius2);
+        padding:18px;
+        transition:transform .2s ease, border-color .2s ease, background .2s ease;
+      }
+      .card:hover{
+        transform:translateY(-4px);
+        border-color:rgba(45,212,191,.28);
+        background:rgba(255,255,255,.04);
+      }
+
+      .muted{ color:var(--muted); }
+      .muted2{ color:var(--muted2); }
+
+      .chip-row{
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px;
+        margin-top:12px;
+      }
+      .chip{
+        font-size:12px;
+        padding:8px 10px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.12);
+        background:rgba(255,255,255,.04);
+        color:var(--muted);
+      }
+      .chip.accent{
+        border-color:rgba(45,212,191,.35);
+        background:rgba(45,212,191,.12);
+        color:rgba(234,240,255,.9);
+      }
+
+      /* Skills */
+      .skills-layout{
+        display:grid;
+        gap:16px;
+        grid-template-columns: 1fr 1fr;
+        align-items:start;
+      }
+      @media (max-width: 900px){
+        .skills-layout{ grid-template-columns:1fr; }
+      }
+
+      .badge-grid{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+      }
+      .badge{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:10px 12px;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,.10);
+        background:rgba(255,255,255,.03);
+        color:var(--muted);
+        font-weight:650;
+        font-size:13px;
+      }
+      .badge i{
+        color:rgba(45,212,191,.95);
+      }
+
+      .progress{
+        margin-top:12px;
+        display:flex;
+        flex-direction:column;
+        gap:14px;
+      }
+      .bar{
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+      }
+      .bar-head{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        font-size:14px;
+        color:var(--muted);
+        font-weight:650;
+      }
+      .track{
+        height:12px;
+        border-radius:999px;
+        background:rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.10);
+        overflow:hidden;
+      }
+      .fill{
+        height:100%;
+        width:0%;
+        background:linear-gradient(90deg, rgba(45,212,191,.95), rgba(96,165,250,.85));
+        border-radius:999px;
+        transition:width .9s ease;
+      }
+
+      /* Timeline */
+      .timeline{
+        display:flex;
+        flex-direction:column;
+        gap:14px;
+        padding-left:0;
+        margin:0;
+        list-style:none;
+      }
+      .t-item{
+        border-radius:var(--radius2);
+        border:1px solid rgba(255,255,255,.10);
+        background:rgba(255,255,255,.03);
+        padding:18px;
+        position:relative;
+        overflow:hidden;
+      }
+      .t-item:before{
+        content:"";
+        position:absolute;
+        inset:0 auto 0 0;
+        width:4px;
+        background:linear-gradient(180deg, rgba(45,212,191,.9), rgba(96,165,250,.55));
+      }
+      .t-top{
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:12px;
+        margin-bottom:8px;
+      }
+      .t-role{
+        font-weight:850;
+        letter-spacing:-.01em;
+      }
+      .t-meta{
+        color:var(--muted);
+        font-size:13px;
+        font-weight:650;
+        white-space:nowrap;
+      }
+      .t-desc{
+        margin:0;
+        color:var(--muted);
+      }
+      .t-bullets{
+        margin:12px 0 0 0;
+        padding-left:18px;
+        color:var(--muted);
+      }
+      .t-bullets li{ margin:6px 0; }
+
+      /* Projects */
+      .project-card{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+      }
+      .project-title{
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:12px;
+      }
+      .project-title strong{
+        font-size:16px;
+        letter-spacing:-.01em;
+      }
+      .project-cta{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        color:rgba(234,240,255,.9);
+        font-weight:700;
+        font-size:13px;
+        padding:8px 10px;
+        border-radius:999px;
+        border:1px solid rgba(255,255,255,.12);
+        background:rgba(255,255,255,.04);
+        transition:transform .2s ease, border-color .2s ease, background .2s ease;
+      }
+      .project-cta:hover{
+        transform:translateY(-2px);
+        border-color:rgba(45,212,191,.35);
+        background:rgba(45,212,191,.12);
+      }
+
+      /* Contact */
+      .contact-layout{
+        display:grid;
+        gap:16px;
+        grid-template-columns: 1fr 1fr;
+        align-items:start;
+      }
+      @media (max-width: 900px){
+        .contact-layout{ grid-template-columns:1fr; }
+      }
+
+      .contact-list{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+      }
+      .contact-item{
+        display:flex;
+        gap:12px;
+        align-items:flex-start;
+      }
+      .contact-item i{
+        width:32px;
+        height:32px;
+        border-radius:12px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        background:rgba(45,212,191,.14);
+        border:1px solid rgba(45,212,191,.30);
+        color:rgba(234,240,255,.95);
+        flex:0 0 auto;
+        margin-top:3px;
+      }
+      .contact-item strong{ display:block; margin-bottom:2px; }
+      .contact-item span{ color:var(--muted); font-size:14px; }
+
+      form{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+      }
+      label{
+        font-weight:700;
+        font-size:13px;
+        color:var(--muted);
+        margin-bottom:6px;
+      }
+      input, textarea{
+        width:100%;
+        padding:12px 12px;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,.12);
+        background:rgba(255,255,255,.03);
+        color:var(--text);
+        outline:none;
+      }
+      textarea{ min-height:120px; resize:vertical; }
+      input::placeholder, textarea::placeholder{ color:rgba(234,240,255,.45); }
+      .form-row{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+      }
+      @media (max-width: 520px){
+        .form-row{ grid-template-columns:1fr; }
+      }
+
+      .form-note{
+        color:var(--muted2);
+        font-size:12px;
+      }
+
+      /* Footer */
+      footer{
+        padding:22px 0 36px;
+        border-top:1px solid rgba(255,255,255,.08);
+        color:var(--muted2);
+      }
+      .footer-inner{
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+      }
+      .footer-links{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+      }
+      .footer-links a{
+        color:var(--muted2);
+        border-bottom:1px dashed rgba(255,255,255,.16);
+        padding-bottom:2px;
+      }
+      .footer-links a:hover{
+        color:var(--text);
+        border-bottom-color:rgba(45,212,191,.55);
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce){
+        html{ scroll-behavior:auto; }
+        .reveal{ transition:none; }
+        .card, .btn, .project-cta, .nav a{ transition:none; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand" aria-label="Portfolio brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div class="brand-title">
+            <strong>Pravin Kumar Sharma</strong>
+            <span>Assistant Professor | ECE</span>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-cta">
+          <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="mobilePanel" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+          <a class="btn btn-secondary" href="#contact" aria-label="Jump to contact section">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Contact
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+      <div class="container">
+        <ul class="mobile-links" role="navigation" aria-label="Mobile navigation">
+          <li><a href="#about"><strong>About</strong><span>Who I am</span></a></li>
+          <li><a href="#skills"><strong>Skills</strong><span>What I do</span></a></li>
+          <li><a href="#experience"><strong>Experience</strong><span>Roles & impact</span></a></li>
+          <li><a href="#projects"><strong>Projects</strong><span>Selected work</span></a></li>
+          <li><a href="#education"><strong>Education</strong><span>Academic journey</span></a></li>
+          <li><a href="#contact"><strong>Contact</strong><span>Get in touch</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <main id="main">
+      <!-- Hero -->
+      <section id="home" class="hero section-anchor">
+        <div class="container hero-grid">
+          <div class="hero-card reveal">
+            <div class="eyebrow">Personal Portfolio</div>
+            <h1 class="hero-title">
+              Pravin <span>Kumar</span> Sharma
+            </h1>
+            <p class="hero-meta">
+              Assistant Professor (ECE) | Power Electronics & Renewable Energy Research
+            </p>
+            <p class="hero-summary">
+              I am an Electronics & Communication Engineering educator and researcher focused on power electronics, EMI/EMC fundamentals,
+              and renewable energy–driven innovation. Over my academic career (2012–2021), I led lab and training responsibilities,
+              mentored guided projects, and contributed to papers and conferences. I also support incubation and startup/consulting initiatives.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects" aria-label="View selected projects">
+                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                View Projects
+              </a>
+              <button class="btn btn-secondary" type="button" id="downloadResumeBtn" aria-label="Download resume as a text file">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+                Download Resume
+              </button>
+            </div>
+          </div>
+
+          <aside class="hero-side reveal" aria-label="Quick facts">
+            <div class="info-card">
+              <strong>At a Glance</strong>
+              <ul class="info-list">
+                <li class="info-row">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <div>
+                    <div>Jaipur, Rajasthan</div>
+                    <div class="muted2">India</div>
+                  </div>
+                </li>
+                <li class="info-row">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <div>Email</div>
+                    <a href="mailto:pks_2009@ymail.com">pks_2009@ymail.com</a>
+                  </div>
+                </li>
+                <li class="info-row">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <div>Phone</div>
+                    <a href="tel:+919460556454">+91-9460556454</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <strong>Focus Areas</strong>
+              <div class="chip-row">
+                <span class="chip accent">Power Electronics</span>
+                <span class="chip">Renewable Energy</span>
+                <span class="chip">Wireless Networks</span>
+                <span class="chip">EMI/EMC</span>
+                <span class="chip">Robotics</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section-anchor">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">About Me</div>
+              <h2>Teaching, research, and hands-on innovation</h2>
+            </div>
+            <p class="subhead">
+              My work sits at the intersection of engineering fundamentals and real-world problem solving. I enjoy translating
+              complex topics into practical lab experiences and mentoring teams through design, testing, and documentation.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:8px;">Academic Leadership</h3>
+              <p class="muted" style="margin:0;">
+                During my tenure as Assistant Professor, I managed and supported special projects and incubation activities,
+                coordinated training and placement responsibilities, and handled practical examination and lab operations.
+              </p>
+              <div class="chip-row" aria-label="Academic responsibilities">
+                <span class="chip">Incubation Centre</span>
+                <span class="chip">Training & Placement Officer</span>
+                <span class="chip">Practical Examination In-charge</span>
+                <span class="chip">Lab In-charge</span>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:8px;">Research & Publications</h3>
+              <p class="muted" style="margin:0;">
+                I contributed to research papers and conference presentations, including renewable energy and monitoring systems.
+                My dissertation focused on energy generation concepts for space-based power systems.
+              </p>
+              <div class="chip-row" aria-label="Research themes">
+                <span class="chip accent">Renewable Energy</span>
+                <span class="chip">Energy Systems</span>
+                <span class="chip">Monitoring & Control</span>
+                <span class="chip">RF / Antenna basics</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section-anchor">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Skills</div>
+              <h2>Core technical strengths</h2>
+            </div>
+            <p class="subhead">
+              Skills are mapped from teaching responsibilities, coursework, and guided projects. The goal is to reflect how I work
+              in practice: design, control, documentation, and collaboration.
+            </p>
+          </div>
+
+          <div class="skills-layout">
+            <div class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:10px;">Skill Badges</h3>
+              <div class="badge-grid" aria-label="Skill badges">
+                <span class="badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i>Power Electronics</span>
+                <span class="badge"><i class="fa-solid fa-solar-panel" aria-hidden="true"></i>Renewable Energy</span>
+                <span class="badge"><i class="fa-solid fa-signal" aria-hidden="true"></i>Wireless Networks</span>
+                <span class="badge"><i class="fa-solid fa-wave-square" aria-hidden="true"></i>EMI / EMI Lab</span>
+                <span class="badge"><i class="fa-solid fa-microscope" aria-hidden="true"></i>Research & Reporting</span>
+                <span class="badge"><i class="fa-solid fa-robot" aria-hidden="true"></i>Robotics & Prototyping</span>
+                <span class="badge"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i>VLSI & Circuit Design</span>
+                <span class="badge"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i>Ethical Hacking Basics</span>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:10px;">Proficiency (Approx.)</h3>
+              <div class="progress" aria-label="Skill progress bars">
+                <div class="bar" data-skill="Power Electronics" data-percent="90">
+                  <div class="bar-head"><span>Power Electronics</span><span class="muted2">90%</span></div>
+                  <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
+                    <div class="fill"></div>
+                  </div>
+                </div>
+                <div class="bar" data-skill="Renewable Energy Systems" data-percent="82">
+                  <div class="bar-head"><span>Renewable Energy Systems</span><span class="muted2">82%</span></div>
+                  <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="82">
+                    <div class="fill"></div>
+                  </div>
+                </div>
+                <div class="bar" data-skill="Teaching & Lab Management" data-percent="88">
+                  <div class="bar-head"><span>Teaching & Lab Management</span><span class="muted2">88%</span></div>
+                  <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88">
+                    <div class="fill"></div>
+                  </div>
+                </div>
+                <div class="bar" data-skill="EMI / EMC Fundamentals" data-percent="72">
+                  <div class="bar-head"><span>EMI / EMC Fundamentals</span><span class="muted2">72%</span></div>
+                  <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="72">
+                    <div class="fill"></div>
+                  </div>
+                </div>
+                <div class="bar" data-skill="Wireless Networks & Monitoring" data-percent="74">
+                  <div class="bar-head"><span>Wireless Networks & Monitoring</span><span class="muted2">74%</span></div>
+                  <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="74">
+                    <div class="fill"></div>
+                  </div>
+                </div>
+                <div class="bar" data-skill="Robotics & Control Prototypes" data-percent="70">
+                  <div class="bar-head"><span>Robotics & Control Prototypes</span><span class="muted2">70%</span></div>
+                  <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+                    <div class="fill"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="form-note" style="margin:12px 0 0 0;">
+                Values are indicative and reflect consistent exposure through coursework, teaching, and guided work.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section-anchor">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Experience</div>
+              <h2>Roles, responsibilities, and impact</h2>
+            </div>
+            <p class="subhead">
+              A mix of teaching, incubation support, training operations, and engineering guidance for student-led prototypes.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:12px;">Academic Timeline</h3>
+              <ol class="timeline" aria-label="Academic experience timeline">
+                <li class="t-item">
+                  <div class="t-top">
+                    <div>
+                      <div class="t-role">Assistant Professor - ECE</div>
+                      <div class="muted2" style="font-size:13px; font-weight:700;">Jaipur Engineering College & Research Center (JECRC), Jaipur</div>
+                    </div>
+                    <div class="t-meta">1 Aug 2012 - 10 Jan 2021</div>
+                  </div>
+                  <p class="t-desc">
+                    Managed lab and academic operations while supporting special projects, incubation activities,
+                    and practical examinations.
+                  </p>
+                  <ul class="t-bullets">
+                    <li>In-charge: Special Projects, Incubation Centre, Training & Placement Officer (TPO), Practical Examination</li>
+                    <li>Handled subjects and lab responsibilities (including AWP, EMI, EMI Lab and related lab operations)</li>
+                    <li>Coordinated lab in-charge duties and workshop/lab execution for practical learning</li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+
+            <div class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:12px;">Entrepreneurship & Consulting</h3>
+              <div class="grid grid-2" style="grid-template-columns:1fr;">
+                <div class="t-item">
+                  <div class="t-top">
+                    <div>
+                      <div class="t-role">Founder & Leadership (Selected)</div>
+                      <div class="muted2" style="font-size:13px; font-weight:700;">Horizon Group of Companies</div>
+                    </div>
+                    <div class="t-meta">Dates not specified</div>
+                  </div>
+                  <p class="t-desc">
+                    Led and supported initiatives across enterprises including hotel, architecture & consultancy,
+                    and connected group activities.
+                  </p>
+                  <div class="chip-row">
+                    <span class="chip">Hotel Horizon</span>
+                    <span class="chip">Horizon Enterprises</span>
+                    <span class="chip">Horizon Architect & Consultancy</span>
+                  </div>
+                </div>
+
+                <div class="t-item">
+                  <div class="t-top">
+                    <div>
+                      <div class="t-role">Advisor / Consultant (Selected)</div>
+                      <div class="muted2" style="font-size:13px; font-weight:700;">Multiple organizations</div>
+                    </div>
+                    <div class="t-meta">Dates not specified</div>
+                  </div>
+                  <p class="t-desc">
+                    Provided advisory and consulting support across education and business initiatives.
+                  </p>
+                  <div class="chip-row">
+                    <span class="chip">Educlear Solutions (Advisor)</span>
+                    <span class="chip">Dhruvika Sales (Consultant)</span>
+                    <span class="chip">Narmada Agro Dairy Farm (Advisor)</span>
+                    <span class="chip">Narmada Foundation (Consultant)</span>
+                  </div>
+                </div>
+              </div>
+              <p class="form-note" style="margin:12px 0 0 0;">
+                Specific dates for consulting engagements are not stated in the resume.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section-anchor">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Projects</div>
+              <h2>Selected dissertations, papers, and guided work</h2>
+            </div>
+            <p class="subhead">
+              Card-based highlights from your resume: dissertation topic, research papers, and notable student-guided prototypes.
+            </p>
+          </div>
+
+          <div class="grid grid-3">
+            <article class="card project-card reveal">
+              <div class="project-title">
+                <strong>Space Based Power Station</strong>
+                <span class="t-meta">M.Tech Dissertation</span>
+              </div>
+              <p class="muted" style="margin:0;">
+                Dissertation exploring the concept of placing large solar arrays in Earth orbit, collecting power, and beaming energy for
+                base-load usage and other applications.
+              </p>
+              <div class="chip-row" aria-label="Technologies">
+                <span class="chip accent">Power Systems</span>
+                <span class="chip">Power Electronics</span>
+                <span class="chip">Renewable Energy</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">
+                Duration: Aug 2012 - Dec 2015
+              </p>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-title">
+                <strong>GeoSolar Cold Storage</strong>
+                <a class="project-cta" href="https://www.ijser.org/onlineResearchPaperViewer.aspx?GeoSolar-Cold-Storage.pdf" target="_blank" rel="noreferrer noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Paper
+                </a>
+              </div>
+              <p class="muted" style="margin:0;">
+                Research on renewable-energy driven cold storage concepts with publication in IJSER.
+              </p>
+              <div class="chip-row">
+                <span class="chip accent">Solar Systems</span>
+                <span class="chip">Thermal Concepts</span>
+                <span class="chip">Renewables</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">Published: 2019</p>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-title">
+                <strong>High Air Pressure - Auto Stop Wind Machine</strong>
+                <a class="project-cta" href="https://www.ijser.org/onlineResearchPaperViewer.aspx?High-Air-Pressure-Auto-Stop-Wind-Machine.pdf" target="_blank" rel="noreferrer noopener">
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>Paper
+                </a>
+              </div>
+              <p class="muted" style="margin:0;">
+                Research focused on wind power and an auto-stop mechanism concept for improved control of energy conversion.
+              </p>
+              <div class="chip-row">
+                <span class="chip accent">Wind Energy</span>
+                <span class="chip">Control Logic</span>
+                <span class="chip">Power Efficiency</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">Published: 2019</p>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-title">
+                <strong>Industrial Interior Environment Monitoring System</strong>
+                <span class="t-meta">Conference</span>
+              </div>
+              <p class="muted" style="margin:0;">
+                Conference work on monitoring indoor industrial environments using engineering instrumentation concepts.
+              </p>
+              <div class="chip-row">
+                <span class="chip accent">Sensors</span>
+                <span class="chip">Monitoring</span>
+                <span class="chip">Data Acquisition</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">RTDEEE-2018 (06 & 07 Apr 2018)</p>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-title">
+                <strong>Rooftop Solar Power Plant (Guided)</strong>
+                <span class="t-meta">Student Guidance</span>
+              </div>
+              <p class="muted" style="margin:0;">
+                Guided student initiative focused on rooftop solar power, powering concepts and practical implementation planning.
+              </p>
+              <div class="chip-row">
+                <span class="chip accent">PV Systems</span>
+                <span class="chip">Power Electronics</span>
+                <span class="chip">Solar Monitoring</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">Applied: Apr 2025 | Host: GIT, Sitapura</p>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-title">
+                <strong>Decoction Vending Machine (Smart India Hackathon)</strong>
+                <span class="t-meta">MHRD / AYUSH</span>
+              </div>
+              <p class="muted" style="margin:0;">
+                Hardware challenge contribution and mentorship for a vending machine concept with team-level execution during the hackathon.
+              </p>
+              <div class="chip-row">
+                <span class="chip accent">Hardware Prototyping</span>
+                <span class="chip">Embedded Control</span>
+                <span class="chip">Power Management</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">Duration: 8-12 Jul 2019 | IIT Delhi</p>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-title">
+                <strong>Solar Electric Vehicle</strong>
+                <span class="t-meta">Texas Instruments / DST</span>
+              </div>
+              <p class="muted" style="margin:0;">
+                Guided work for an electric vehicle concept powered by solar energy, with a focus on system integration and practical design.
+              </p>
+              <div class="chip-row">
+                <span class="chip accent">Solar PV</span>
+                <span class="chip">Battery / Power Systems</span>
+                <span class="chip">Control</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">Oct - Dec 2018</p>
+            </article>
+
+            <article class="card project-card reveal">
+              <div class="project-title">
+                <strong>Autonomous Bot for Road Divider Plantation</strong>
+                <span class="t-meta">Robotics / Automation</span>
+              </div>
+              <p class="muted" style="margin:0;">
+                Mentored an autonomous robotics concept targeting controlled plantation actions for road divider environments.
+              </p>
+              <div class="chip-row">
+                <span class="chip accent">Robotics</span>
+                <span class="chip">Sensors</span>
+                <span class="chip">Autonomous Control</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">Aug 2018 | Recognition: Texas Instruments (USA) & DST</p>
+            </article>
+
+            <article class="card project-card reveal" style="grid-column: span 1;">
+              <div class="project-title">
+                <strong>Wireless Networks / VLSI / Antenna Studies</strong>
+                <span class="t-meta">Academic Coursework</span>
+              </div>
+              <p class="muted" style="margin:0;">
+                Coursework and conference topics included wireless networks, VLSI design through ICT, and antenna-related research such as
+                microstrip patch antenna concepts for WLAN applications.
+              </p>
+              <div class="chip-row">
+                <span class="chip accent">Wireless Networks</span>
+                <span class="chip">VLSI</span>
+                <span class="chip">Microstrip Antenna Basics</span>
+              </div>
+              <p class="muted2" style="margin:0; font-size:13px;">Selected from resume</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="section-anchor">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Education</div>
+              <h2>Academic qualifications</h2>
+            </div>
+            <p class="subhead">
+              Key degrees and notable GATE qualification scores mentioned in the resume.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:12px;">Degrees</h3>
+              <ol class="timeline" aria-label="Education timeline">
+                <li class="t-item">
+                  <div class="t-top">
+                    <div>
+                      <div class="t-role">M.Tech - Power Electronics</div>
+                      <div class="muted2" style="font-size:13px; font-weight:700;">Jagannath University, Jaipur</div>
+                    </div>
+                    <div class="t-meta">2015</div>
+                  </div>
+                  <p class="t-desc">Dissertation: Space Based Power Station</p>
+                </li>
+                <li class="t-item">
+                  <div class="t-top">
+                    <div>
+                      <div class="t-role">B.Tech - ECE</div>
+                      <div class="muted2" style="font-size:13px; font-weight:700;">Poornima Institute of Engineering & Technology</div>
+                    </div>
+                    <div class="t-meta">2012</div>
+                  </div>
+                  <p class="t-desc">Affiliated with Rajasthan Technical University, Kota (as per resume)</p>
+                </li>
+                <li class="t-item">
+                  <div class="t-top">
+                    <div>
+                      <div class="t-role">Intermediate</div>
+                      <div class="muted2" style="font-size:13px; font-weight:700;">S.L.D., Sr. Sec. / A.V.M., Keshav Vidhya Peeth</div>
+                    </div>
+                    <div class="t-meta">2007</div>
+                  </div>
+                </li>
+                <li class="t-item">
+                  <div class="t-top">
+                    <div>
+                      <div class="t-role">Matriculation</div>
+                      <div class="muted2" style="font-size:13px; font-weight:700;">R.B.S.E. / A.V.M., Keshav Vidhya Peeth</div>
+                    </div>
+                    <div class="t-meta">2005</div>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:12px;">GATE Qualification</h3>
+              <p class="muted" style="margin:0;">
+                GATE scores (Qualified) mentioned in the resume:
+              </p>
+              <div class="chip-row" style="margin-top:14px;">
+                <span class="chip accent">GATE 2012: 356</span>
+                <span class="chip accent">GATE 2013: 395</span>
+                <span class="chip accent">GATE 2014: 459</span>
+                <span class="chip accent">GATE 2015: 382</span>
+              </div>
+              <div style="height:14px;"></div>
+              <h3 style="font-size:16px; margin:0 0 10px 0;">Research & Training Highlights</h3>
+              <p class="muted" style="margin:0;">
+                The resume also lists participation in faculty development programs, workshops, and conferences,
+                along with training responsibilities and project guidance.
+              </p>
+              <div class="chip-row">
+                <span class="chip">WIPO / Patent Search Workshop</span>
+                <span class="chip">Startup Awareness Workshop</span>
+                <span class="chip">Digital Rajasthan Conclave</span>
+                <span class="chip">Power Electronics & Wireless Networks</span>
+              </div>
+              <p class="form-note" style="margin:12px 0 0 0;">
+                Details are summarized to keep the portfolio concise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section-anchor">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Contact</div>
+              <h2>Let’s connect</h2>
+            </div>
+            <p class="subhead">
+              For collaboration, mentorship, or speaking opportunities, reach out using the information below.
+            </p>
+          </div>
+
+          <div class="contact-layout">
+            <div class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:12px;">Contact Details</h3>
+              <div class="contact-list" aria-label="Contact information">
+                <div class="contact-item">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                  <div>
+                    <strong>Email</strong>
+                    <span><a href="mailto:pks_2009@ymail.com">pks_2009@ymail.com</a></span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                  <div>
+                    <strong>Phone</strong>
+                    <span><a href="tel:+919460556454">+91-9460556454</a></span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  <div>
+                    <strong>Address</strong>
+                    <span>63, Krishna Vihar Colony, Sec 5, Pratap Nagar, Tonk Road, Jaipur, Rajasthan 302033</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                  <div>
+                    <strong>LinkedIn</strong>
+                    <span><a href="https://www.linkedin.com/in/pravin-sharma-7a78723a" target="_blank" rel="noreferrer noopener">linkedin.com/in/pravin-sharma-7a78723a</a></span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                  <div>
+                    <strong>Facebook</strong>
+                    <span><a href="https://www.facebook.com/pravinkumar.sharma.940" target="_blank" rel="noreferrer noopener">facebook.com/pravinkumar.sharma.940</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card reveal">
+              <h3 style="font-size:16px; margin-bottom:12px;">Contact Form</h3>
+              <p class="muted" style="margin:0 0 14px 0;">
+                Non-functional form for UI purposes. You can still use the buttons and contact links above.
+              </p>
+
+              <form id="contactForm" aria-label="Contact form">
+                <div class="form-row">
+                  <div>
+                    <label for="name">Your Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required />
+                  </div>
+                  <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required />
+                  </div>
+                </div>
+                <div>
+                  <label for="topic">Topic</label>
+                    <input id="topic" name="topic" type="text" />
+                </div>
+                <div>
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  Send Message
+                </button>
+                <div class="form-note" id="formStatus" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container footer-inner">
+          <div>© <span id="year"></span> Pravin Kumar Sharma. All rights reserved.</div>
+          <div class="footer-links" aria-label="Footer links">
+            <a href="#home">Back to top</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      (function(){
+        "use strict";
+
+        const yearEl = document.getElementById("year");
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+        // Mobile menu toggle
+        const navToggle = document.getElementById("navToggle");
+        const mobilePanel = document.getElementById("mobilePanel");
+        function setMenu(open){
+          if (!mobilePanel || !navToggle) return;
+          mobilePanel.classList.toggle("open", open);
+          navToggle.setAttribute("aria-expanded", String(open));
+          mobilePanel.setAttribute("aria-hidden", String(!open));
+          navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        }
+        if (navToggle){
+          navToggle.addEventListener("click", function(){
+            const open = !mobilePanel.classList.contains("open");
+            setMenu(open);
+          });
+        }
+        // Close mobile menu when clicking a mobile link
+        document.querySelectorAll("#mobilePanel a[href^='#']").forEach((a) => {
+          a.addEventListener("click", () => setMenu(false));
+        });
+        // Close menu on Escape
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") setMenu(false);
+        });
+
+        // Smooth scrolling with header offset handled by CSS scroll-margin-top
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener("click", (e) => {
+            const id = link.getAttribute("href");
+            if (!id || id === "#") return;
+            const target = document.querySelector(id);
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        });
+
+        // Active section highlighting in desktop nav
+        const sectionIds = ["about","skills","experience","projects","education","contact"];
+        const navLinks = Array.from(document.querySelectorAll(".nav a"));
+        const idToLink = new Map(navLinks.map(l => [l.getAttribute("href")?.slice(1), l]));
+        const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+        const observer = new IntersectionObserver((entries) => {
+          // Choose the most visible intersecting section.
+          const visible = entries
+            .filter(en => en.isIntersecting)
+            .sort((a,b) => (b.intersectionRatio - a.intersectionRatio))[0];
+          if (!visible) return;
+          const id = visible.target.id;
+          navLinks.forEach(l => l.removeAttribute("aria-current"));
+          const link = idToLink.get(id);
+          if (link) link.setAttribute("aria-current", "page");
+        }, { threshold: [0.2, 0.35, 0.5, 0.65] });
+
+        sections.forEach(s => observer.observe(s));
+
+        // Reveal animations + animate skill bars when visible
+        const revealEls = Array.from(document.querySelectorAll(".reveal"));
+        const skillBars = Array.from(document.querySelectorAll(".bar[data-percent] .fill"));
+
+        const revealObs = new IntersectionObserver((entries) => {
+          for (const en of entries){
+            if (en.isIntersecting){
+              en.target.classList.add("is-visible");
+            }
+          }
+        }, { threshold: 0.12 });
+
+        revealEls.forEach(el => revealObs.observe(el));
+
+        const fillObs = new IntersectionObserver((entries) => {
+          for (const en of entries){
+            if (!en.isIntersecting) continue;
+            const bar = en.target.closest(".bar");
+            const pct = bar ? bar.getAttribute("data-percent") : null;
+            if (pct){
+              en.target.style.width = pct + "%";
+            }
+          }
+        }, { threshold: 0.25 });
+
+        // Attach observer to each fill
+        skillBars.forEach(fill => fillObs.observe(fill));
+
+        // Download resume as text (no external file required)
+        const downloadBtn = document.getElementById("downloadResumeBtn");
+        function buildResumeText(){
+          const lines = [
+            "Pravin Kumar Sharma",
+            "Assistant Professor (ECE) | Power Electronics & Renewable Energy Research",
+            "",
+            "Contact",
+            "Email: pks_2009@ymail.com",
+            "Phone: +91-9460556454",
+            "Location: Jaipur, Rajasthan, India",
+            "Address: 63, Krishna Vihar Colony, Sec 5, Pratap Nagar, Tonk Road, Jaipur, Rajasthan 302033",
+            "LinkedIn: https://www.linkedin.com/in/pravin-sharma-7a78723a",
+            "Facebook: https://www.facebook.com/pravinkumar.sharma.940",
+            "",
+            "Education",
+            "- M.Tech - Power Electronics | Jagannath University, Jaipur | 2015",
+            "- B.Tech - ECE | Poornima Institute of Engineering & Technology | 2012",
+            "- Intermediate | S.L.D. Sr. Sec. / A.V.M., Keshav Vidhya Peeth | 2007",
+            "- Matriculation | R.B.S.E. / A.V.M., Keshav Vidhya Peeth | 2005",
+            "",
+            "GATE Qualification (Scores)",
+            "- GATE 2012: 356",
+            "- GATE 2013: 395",
+            "- GATE 2014: 459",
+            "- GATE 2015: 382",
+            "",
+            "Experience",
+            "- Assistant Professor - ECE | Jaipur Engineering College & Research Center (JECRC), Jaipur | 1 Aug 2012 - 10 Jan 2021",
+            "  * In-charge: Special Projects, Incubation Centre, TPO (Training & Placement Officer), Practical Examination",
+            "  * Subjects / lab responsibilities: AWP, EMI, EMI Lab (and related lab operations)",
+            "  * Lab in-charge and workshop/lab execution for practical learning",
+            "",
+            "Selected Projects & Publications",
+            "- Space Based Power Station | M.Tech Dissertation | Aug 2012 - Dec 2015",
+            "- GeoSolar Cold Storage | IJSER | 2019",
+            "- High Air Pressure - Auto Stop Wind Machine | IJSER | 2019",
+            "- Industrial Interior Environment Monitoring System | RTDEEE-2018",
+            "- Rooftop Solar Power Plant | Guided Project | Applied Apr 2025 | GIT, Sitapura",
+            "- Decoction Vending Machine | Smart India Hackathon (Hardware Edition) | 2019 | IIT Delhi",
+            "- Solar Electric Vehicle | 2018 | Texas Instruments (USA) & DST",
+            "- Autonomous Bot for Road Divider Plantation | Aug 2018 | Texas Instruments (USA) & DST",
+            "",
+            "Skills (Summary)",
+            "- Power Electronics, Renewable Energy Systems, EMI/EMC fundamentals",
+            "- Wireless Networks & Monitoring, Robotics & Control prototypes",
+            "- Teaching, lab management, research & technical reporting"
+          ];
+          return lines.join("\n");
+        }
+
+        function downloadText(filename, text){
+          const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+        }
+
+        if (downloadBtn){
+          downloadBtn.addEventListener("click", () => {
+            const text = buildResumeText();
+            downloadText("Pravin_Kumar_Sharma_Resume.txt", text);
+          });
+        }
+
+        // Non-functional contact form (UI only)
+        const contactForm = document.getElementById("contactForm");
+        const statusEl = document.getElementById("formStatus");
+        if (contactForm){
+          contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (statusEl){
+              statusEl.textContent = "Message captured (demo). Please use the email/phone links for real contact.";
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
+
